@@ -1,0 +1,72 @@
+{
+  "username": "thisuri-jay",
+  "display_name": "Thisuri Jayasinghe",
+  "role": "CSE Undergrad | Backend & Applied AI",
+  "origin": "Galle, Sri Lanka",
+  "education": "BSc Eng (Hons) CSE, Univ. of Moratuwa",
+  "status": "Third-year | Open to internships",
+  "toolchain": "Git, Docker Compose, Vitest, Playwright",
+
+  "core": {
+    "Lang": "TypeScript, Python, Java, C++",
+    "Frontend": "Next.js, React, HTML, CSS",
+    "Backend": "NestJS, FastAPI, Node.js, Express",
+    "Database": "PostgreSQL/pgvector, MySQL, Prisma",
+    "Infra": "Docker, Prometheus, Grafana, Linux"
+  },
+
+  "contact": {
+    "email": "thisuridewmini127@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/your-handle",
+    "github": "https://github.com/thisuri-jay"
+  },
+
+  "photo": "assets/photo.jpg",
+  "_comment_photo_crop": "Square area of the photo to use: [left, top, right, bottom] in pixels. Delete it to use a centred square.",
+  "photo_crop": [330, 440, 730, 840],
+  "dot_count": 1500,
+
+  "_comment_languages": "Used only when your public repos have no language data yet. These are self-rated weights, not measured - edit freely.",
+  "fallback_languages": {
+    "TypeScript": 35,
+    "Python": 35,
+    "Java": 10,
+    "C++": 10,
+    "SQL": 7,
+    "VHDL": 3
+  },
+
+  "_comment_projects": "true = always show the projects below (good when your work lives in team repos). false = use your pinned / most-starred public repos, falling back to these.",
+  "use_featured_projects": true,
+
+  "featured_projects": [
+    {
+      "name": "SmartJourney",
+      "description": "AI trip planner: LangGraph agents, hybrid RAG, Keycloak auth.",
+      "topics": ["fastapi", "langgraph", "nestjs"],
+      "language": "TypeScript",
+      "period": "Present"
+    },
+    {
+      "name": "HealthcareMonitoring",
+      "description": "Metrics, health checks and Grafana dashboards for a vitals pipeline.",
+      "topics": ["prometheus", "grafana", "kafka"],
+      "language": "Python",
+      "period": "2026"
+    },
+    {
+      "name": "SkyNest_Hotels",
+      "description": "Hotel booking DB: schema, triggers, views and reporting SQL.",
+      "topics": ["mysql", "express", "react"],
+      "language": "SQL",
+      "period": "2025"
+    },
+    {
+      "name": "Nanoprocessor",
+      "description": "VHDL nanoprocessor with testbenches for arithmetic, overflow and zero flags.",
+      "topics": ["vhdl", "vivado"],
+      "language": "VHDL",
+      "period": "2024"
+    }
+  ]
+}

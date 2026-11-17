@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="158" viewBox="0 0 900 158" font-family="'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace">
+<title>Top languages</title>
+<defs>
+  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#22e4ff"/><stop offset="1" stop-color="#a855f7"/>
+  </linearGradient>
+</defs>
+<rect width="900" height="158" rx="14" fill="#070b1f"/><rect x="2" y="2" width="896" height="154" rx="13" fill="none" stroke="url(#neon)" stroke-width="1.6" filter="url(#glow)" opacity="0.9"/>
+<text x="24" y="32" fill="#3dffa0" font-size="13">$ <tspan fill="#c9d6ff">cat languages.log</tspan></text>
+<text x="876" y="32" fill="#6b7aa8" font-size="11" text-anchor="end">self-rated focus</text>
+<!-- the clip grows left to right, so the whole bar "fills up" once -->
+<clipPath id="bar"><rect x="30" y="60" width="840" height="14" rx="7">
+  <animate attributeName="width" values="0;840" dur="1.4s" fill="freeze"/></rect></clipPath>
+<rect x="30" y="60" width="840" height="14" rx="7" fill="#0d1433"/>
+<g clip-path="url(#bar)"><rect x="30.0" y="60" width="294.0" height="14" fill="#3178c6"/><rect x="324.0" y="60" width="294.0" height="14" fill="#3572A5"/><rect x="618.0" y="60" width="84.0" height="14" fill="#f89820"/><rect x="702.0" y="60" width="84.0" height="14" fill="#f34b7d"/><rect x="786.0" y="60" width="58.8" height="14" fill="#ffd84f"/><rect x="844.8" y="60" width="25.2" height="14" fill="#4f8bff"/></g>
+<circle cx="36" cy="100" r="5" fill="#3178c6" filter="url(#glow)"/><text x="48" y="104" fill="#c9d6ff" font-size="13">TypeScript <tspan fill="#6b7aa8">35.0%</tspan></text><circle cx="326" cy="100" r="5" fill="#3572A5" filter="url(#glow)"/><text x="338" y="104" fill="#c9d6ff" font-size="13">Python <tspan fill="#6b7aa8">35.0%</tspan></text><circle cx="616" cy="100" r="5" fill="#f89820" filter="url(#glow)"/><text x="628" y="104" fill="#c9d6ff" font-size="13">Java <tspan fill="#6b7aa8">10.0%</tspan></text><circle cx="36" cy="124" r="5" fill="#f34b7d" filter="url(#glow)"/><text x="48" y="128" fill="#c9d6ff" font-size="13">C++ <tspan fill="#6b7aa8">10.0%</tspan></text><circle cx="326" cy="124" r="5" fill="#ffd84f" filter="url(#glow)"/><text x="338" y="128" fill="#c9d6ff" font-size="13">SQL <tspan fill="#6b7aa8">7.0%</tspan></text><circle cx="616" cy="124" r="5" fill="#4f8bff" filter="url(#glow)"/><text x="628" y="128" fill="#c9d6ff" font-size="13">VHDL <tspan fill="#6b7aa8">3.0%</tspan></text>
+</svg>
