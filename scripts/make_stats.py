@@ -64,6 +64,24 @@ def fetch_calendar_public(login, first_year=2008):
     return days or None
 
 
+def fetch_languages_public(login):
+    """No-token fallback using the public REST API (fine for a few repos)."""
+    import requests
+    try:
+        repos = requests.get(f"https://api.github.com/users/{login}/repos",
+                             params={"per_page": 100, "type": "owner"}, timeout=30).json()
+        totals = {}
+        for repo in repos:
+            # skip forks and this profile repo (its scripts are not "your" languages)
+            if repo.get("fork") or repo["name"].lower() == login.lower():
+                continue
+            for name, size in requests.get(repo["languages_url"], timeout=30).json().items():
+                totals[name] = totals.get(name, 0) + size
+        return sorted(totals.items(), key=lambda kv: -kv[1]) or None
+    except Exception:
+        return None
+
+
 def account_year(login):
     """Year the GitHub account was created (public REST API, no token needed)."""
     import requests
@@ -122,13 +140,15 @@ def fetch_languages(login):
     """Return [(name, bytes)] summed over the user's public, non-fork repos."""
     q = """query($login:String!){user(login:$login){
       repositories(first:100, ownerAffiliations:OWNER, isFork:false, privacy:PUBLIC){
-        nodes{languages(first:10, orderBy:{field:SIZE, direction:DESC}){
+        nodes{name languages(first:10, orderBy:{field:SIZE, direction:DESC}){
           edges{size node{name}}}}}}}"""
     data = graphql(q, {"login": login})
     if not data:
         return None
     totals = {}
     for repo in data["user"]["repositories"]["nodes"]:
+        if repo["name"].lower() == login.lower():   # skip this profile repo
+            continue
         for e in repo["languages"]["edges"]:
             totals[e["node"]["name"]] = totals.get(e["node"]["name"], 0) + e["size"]
     return sorted(totals.items(), key=lambda kv: -kv[1]) or None
@@ -186,12 +206,17 @@ def stats_svg(s):
 </svg>"""
 
 
-def languages_svg(langs, note):
+def languages_svg(langs, note, show_pct=True):
+    """langs = [(name, size)]. With show_pct=False (no measured data) every
+    language gets an equal slice and no percentage is printed."""
     total = sum(v for _, v in langs) or 1
-    top = langs[:6]
-    rest = total - sum(v for _, v in top)
-    if rest > 0:
-        top.append(("Other", rest))
+    if show_pct:
+        top = langs[:6]
+        rest = total - sum(v for _, v in top)
+        if rest > 0:
+            top.append(("Other", rest))
+    else:
+        top = langs
 
     bar_x, bar_w, bar_y = 30, W - 60, 60
     rows = (len(top) + 2) // 3
@@ -209,7 +234,7 @@ def languages_svg(langs, note):
         legend.append(
             f'<circle cx="{lx + 6}" cy="{ly - 4}" r="5" fill="{color}" filter="url(#glow)"/>'
             f'<text x="{lx + 18}" y="{ly}" fill="{TEXT}" font-size="13">{esc(name)} '
-            f'<tspan fill="{MUTED}">{pct:.1f}%</tspan></text>')
+            + (f'<tspan fill="{MUTED}">{pct:.1f}%</tspan>' if show_pct else "") + '</text>')
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{FONT}">
 <title>Top languages</title>
@@ -240,10 +265,12 @@ if __name__ == "__main__":
         days = {}
     write_svg("stats.svg", stats_svg(compute_stats(days)))
 
-    langs = fetch_languages(login)
-    note = "computed from public repos"
-    if not langs:
-        print("!! no language data - using fallback_languages from profile.json")
-        langs = sorted(p["fallback_languages"].items(), key=lambda kv: -kv[1])
-        note = "self-rated focus"
-    write_svg("languages.svg", languages_svg(langs, note))
+    langs = fetch_languages(login) or fetch_languages_public(login)
+    if langs:
+        write_svg("languages.svg", languages_svg(langs, "computed from public repos"))
+    else:
+        # No public repos to measure: list the languages from profile.json
+        # with equal slices and no percentages (nothing is made up).
+        print("no language data in public repos - listing languages from profile.json")
+        langs = [(name, 1) for name in p["languages"]]
+        write_svg("languages.svg", languages_svg(langs, "languages I work with", show_pct=False))

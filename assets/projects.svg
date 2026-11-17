@@ -16,19 +16,19 @@
 <g transform="translate(30 50)">
   <rect width="410" height="140" rx="10" fill="#0d1433" stroke="url(#neon)" stroke-opacity=".7"/>
   <text x="18" y="32" fill="#22e4ff" font-size="16" font-weight="bold" filter="url(#glow)">SmartJourney<tspan fill="#a855f7">_</tspan></text>
-  <text x="18" y="58" fill="#c9d6ff" font-size="12">AI trip planner: LangGraph agents,</text><text x="18" y="75" fill="#c9d6ff" font-size="12">hybrid RAG, Keycloak auth.</text>
+  <text x="18" y="58" fill="#c9d6ff" font-size="12">AI tourism platform: hybrid RAG search,</text><text x="18" y="75" fill="#c9d6ff" font-size="12">Keycloak auth, E2E tests.</text>
   <rect x="18" y="96" width="65" height="18" rx="9" fill="none" stroke="#a855f7" stroke-opacity=".7"/><text x="50.5" y="109" fill="#a855f7" font-size="11" text-anchor="middle">fastapi</text><rect x="89" y="96" width="79" height="18" rx="9" fill="none" stroke="#a855f7" stroke-opacity=".7"/><text x="128.5" y="109" fill="#a855f7" font-size="11" text-anchor="middle">langgraph</text><rect x="174" y="96" width="58" height="18" rx="9" fill="none" stroke="#a855f7" stroke-opacity=".7"/><text x="203.0" y="109" fill="#a855f7" font-size="11" text-anchor="middle">nestjs</text>
   <text x="18" y="130" fill="#6b7aa8" font-size="10">Present</text>
   
   <g transform="translate(360 56) rotate(-90)">
     <circle r="26" fill="none" stroke="#6b7aa8" stroke-opacity=".25" stroke-width="7"/>
-    <circle r="26" fill="none" stroke="#3178c6" stroke-width="7" stroke-linecap="round"
+    <circle r="26" fill="none" stroke="#3572A5" stroke-width="7" stroke-linecap="round"
       stroke-dasharray="163.4" stroke-dashoffset="0.0" filter="url(#glow)">
       <animate attributeName="stroke-dashoffset" values="163.4;0.0" dur="1.4s" fill="freeze"/>
     </circle>
   </g>
-  <text x="360" y="60" fill="#c9d6ff" font-size="11" text-anchor="middle">TS</text>
-  <text x="360" y="102" fill="#6b7aa8" font-size="10" text-anchor="middle">TypeScript</text>
+  <text x="360" y="60" fill="#c9d6ff" font-size="11" text-anchor="middle">PY</text>
+  <text x="360" y="102" fill="#6b7aa8" font-size="10" text-anchor="middle">Python</text>
 </g>
 <g transform="translate(460 50)">
   <rect width="410" height="140" rx="10" fill="#0d1433" stroke="url(#neon)" stroke-opacity=".7"/>
@@ -51,7 +51,7 @@
   <rect width="410" height="140" rx="10" fill="#0d1433" stroke="url(#neon)" stroke-opacity=".7"/>
   <text x="18" y="32" fill="#22e4ff" font-size="16" font-weight="bold" filter="url(#glow)">SkyNest_Hotels<tspan fill="#a855f7">_</tspan></text>
   <text x="18" y="58" fill="#c9d6ff" font-size="12">Hotel booking DB: schema, triggers,</text><text x="18" y="75" fill="#c9d6ff" font-size="12">views and reporting SQL.</text>
-  <rect x="18" y="96" width="51" height="18" rx="9" fill="none" stroke="#a855f7" stroke-opacity=".7"/><text x="43.5" y="109" fill="#a855f7" font-size="11" text-anchor="middle">mysql</text><rect x="75" y="96" width="65" height="18" rx="9" fill="none" stroke="#a855f7" stroke-opacity=".7"/><text x="107.5" y="109" fill="#a855f7" font-size="11" text-anchor="middle">express</text><rect x="146" y="96" width="51" height="18" rx="9" fill="none" stroke="#a855f7" stroke-opacity=".7"/><text x="171.5" y="109" fill="#a855f7" font-size="11" text-anchor="middle">react</text>
+  <rect x="18" y="96" width="51" height="18" rx="9" fill="none" stroke="#a855f7" stroke-opacity=".7"/><text x="43.5" y="109" fill="#a855f7" font-size="11" text-anchor="middle">mysql</text><rect x="75" y="96" width="37" height="18" rx="9" fill="none" stroke="#a855f7" stroke-opacity=".7"/><text x="93.5" y="109" fill="#a855f7" font-size="11" text-anchor="middle">sql</text><rect x="118" y="96" width="121" height="18" rx="9" fill="none" stroke="#a855f7" stroke-opacity=".7"/><text x="178.5" y="109" fill="#a855f7" font-size="11" text-anchor="middle">database-design</text>
   <text x="18" y="130" fill="#6b7aa8" font-size="10">2025</text>
   
   <g transform="translate(360 56) rotate(-90)">

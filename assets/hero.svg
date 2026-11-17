@@ -1530,7 +1530,7 @@
 <text x="400" y="106" xml:space="preserve"><tspan fill="#22e4ff">Role</tspan><tspan fill="#6b7aa8"> ............ </tspan><tspan fill="#c9d6ff">CSE Undergrad | Backend &amp; Applied AI</tspan></text>
 <text x="400" y="123" xml:space="preserve"><tspan fill="#22e4ff">Origin</tspan><tspan fill="#6b7aa8"> .......... </tspan><tspan fill="#c9d6ff">Galle, Sri Lanka</tspan></text>
 <text x="400" y="140" xml:space="preserve"><tspan fill="#22e4ff">Education</tspan><tspan fill="#6b7aa8"> ....... </tspan><tspan fill="#c9d6ff">BSc Eng (Hons) CSE, Univ. of Moratuwa</tspan></text>
-<text x="400" y="157" xml:space="preserve"><tspan fill="#22e4ff">Status</tspan><tspan fill="#6b7aa8"> .......... </tspan><tspan fill="#c9d6ff">Third-year | Open to internships</tspan></text>
+<text x="400" y="157" xml:space="preserve"><tspan fill="#22e4ff">Status</tspan><tspan fill="#6b7aa8"> .......... </tspan><tspan fill="#c9d6ff">Third-year undergraduate</tspan></text>
 <text x="400" y="174" xml:space="preserve"><tspan fill="#22e4ff">ToolChain</tspan><tspan fill="#6b7aa8"> ....... </tspan><tspan fill="#c9d6ff">Git, Docker Compose, Vitest, Playwright</tspan></text>
 <text x="400" y="195" fill="#a855f7" font-size="12">// CORE.MODULES</text>
 <text x="400" y="212" xml:space="preserve"><tspan fill="#22e4ff">Core.Lang</tspan><tspan fill="#6b7aa8"> ....... </tspan><tspan fill="#c9d6ff">TypeScript, Python, Java, C++</tspan></text>

@@ -28,6 +28,7 @@ def fetch_projects(login, limit=6):
         return None
     user = data["user"]
     repos = user["pinnedItems"]["nodes"] or user["repositories"]["nodes"]
+    repos = [r for r in repos if r["name"].lower() != login.lower()]   # skip this profile repo
     projects = []
     for r in repos:
         langs = r["languages"]

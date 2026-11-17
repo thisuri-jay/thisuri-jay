@@ -4,7 +4,7 @@
   "role": "CSE Undergrad | Backend & Applied AI",
   "origin": "Galle, Sri Lanka",
   "education": "BSc Eng (Hons) CSE, Univ. of Moratuwa",
-  "status": "Third-year | Open to internships",
+  "status": "Third-year undergraduate",
   "toolchain": "Git, Docker Compose, Vitest, Playwright",
 
   "core": {
@@ -26,15 +26,8 @@
   "photo_crop": [330, 440, 730, 840],
   "dot_count": 1500,
 
-  "_comment_languages": "Used only when your public repos have no language data yet. These are self-rated weights, not measured - edit freely.",
-  "fallback_languages": {
-    "TypeScript": 35,
-    "Python": 35,
-    "Java": 10,
-    "C++": 10,
-    "SQL": 7,
-    "VHDL": 3
-  },
+  "_comment_languages": "Shown (without percentages) only while your public repos have no language data. Once they do, real percentages replace this list.",
+  "languages": ["TypeScript", "Python", "Java", "C++", "JavaScript", "HTML", "CSS", "VHDL"],
 
   "_comment_projects": "true = always show the projects below (good when your work lives in team repos). false = use your pinned / most-starred public repos, falling back to these.",
   "use_featured_projects": true,
@@ -42,9 +35,9 @@
   "featured_projects": [
     {
       "name": "SmartJourney",
-      "description": "AI trip planner: LangGraph agents, hybrid RAG, Keycloak auth.",
+      "description": "AI tourism platform: hybrid RAG search, Keycloak auth, E2E tests.",
       "topics": ["fastapi", "langgraph", "nestjs"],
-      "language": "TypeScript",
+      "language": "Python",
       "period": "Present"
     },
     {
@@ -57,7 +50,7 @@
     {
       "name": "SkyNest_Hotels",
       "description": "Hotel booking DB: schema, triggers, views and reporting SQL.",
-      "topics": ["mysql", "express", "react"],
+      "topics": ["mysql", "sql", "database-design"],
       "language": "SQL",
       "period": "2025"
     },

@@ -14,7 +14,7 @@
 
 <g transform="translate(30 52)">
   <rect width="270" height="128" rx="10" fill="#0d1433" stroke="#22e4ff" stroke-opacity=".45"/>
-  <text x="135" y="62" fill="#22e4ff" font-size="38" font-weight="bold" text-anchor="middle" filter="url(#glow)">191
+  <text x="135" y="62" fill="#22e4ff" font-size="38" font-weight="bold" text-anchor="middle" filter="url(#glow)">192
     <animate attributeName="opacity" values="0;1" dur="1.2s" fill="freeze"/></text>
   <text x="135" y="92" fill="#c9d6ff" font-size="13" text-anchor="middle">Total Contributions</text>
   <text x="135" y="112" fill="#6b7aa8" font-size="11" text-anchor="middle">since Jan 2025</text>
