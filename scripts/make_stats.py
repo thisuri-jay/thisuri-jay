@@ -39,6 +39,41 @@ def fetch_calendar(login):
     return days
 
 
+def fetch_calendar_public(login, first_year=2008):
+    """No-token fallback: read the public contribution graph HTML (the same
+    page your profile shows) one year at a time. Returns {date: count}."""
+    import re
+    import requests
+
+    days = {}
+    for year in range(max(first_year, 2008), date.today().year + 1):
+        r = requests.get(f"https://github.com/users/{login}/contributions",
+                         params={"from": f"{year}-01-01", "to": f"{year}-12-31"},
+                         headers={"User-Agent": "profile-readme-generator"}, timeout=30)
+        if r.status_code != 200:
+            return None
+        html = r.text
+        # each day cell: <td ... data-date="2026-05-03" id="contribution-day-component-0-24">
+        cell_date = {cid: d for d, cid in re.findall(
+            r'data-date="(\d{4}-\d{2}-\d{2})"\s+id="([^"]+)"', html)}
+        # each tooltip: <tool-tip for="contribution-day-component-0-24">8 contributions on ...
+        for cid, text in re.findall(r'<tool-tip[^>]*for="([^"]+)"[^>]*>\s*([^<]*)', html):
+            if cid in cell_date:
+                m = re.match(r"(\d[\d,]*) contribution", text)
+                days[date.fromisoformat(cell_date[cid])] = int(m.group(1).replace(",", "")) if m else 0
+    return days or None
+
+
+def account_year(login):
+    """Year the GitHub account was created (public REST API, no token needed)."""
+    import requests
+    try:
+        r = requests.get(f"https://api.github.com/users/{login}", timeout=30)
+        return int(r.json()["created_at"][:4])
+    except Exception:
+        return date.today().year - 1
+
+
 def compute_stats(days):
     """Total contributions, current streak and longest streak (with date ranges)."""
     today = date.today()
@@ -69,14 +104,17 @@ def compute_stats(days):
         cur += 1
         d -= timedelta(days=1)
 
-    fmt = lambda x: x.strftime("%b %d")
+    def span(a, b):
+        f = lambda x: x.strftime("%b %d")
+        return f(a) if a == b else f"{f(a)} - {f(b)}"
+
     return {
         "total": total,
         "current": cur,
         "longest": longest,
         "since": ordered[0],
-        "current_range": f"{fmt(d + timedelta(days=1))} - {fmt(end)}" if cur else "start one today",
-        "longest_range": f"{fmt(best_start)} - {fmt(best_end)}" if longest else "-",
+        "current_range": span(d + timedelta(days=1), end) if cur else "start one today",
+        "longest_range": span(best_start, best_end) if longest else "-",
     }
 
 
@@ -195,7 +233,10 @@ if __name__ == "__main__":
 
     days = fetch_calendar(login)
     if days is None:
-        print("!! no GITHUB_TOKEN (or API error) - stats.svg will show zeros")
+        print("no GITHUB_TOKEN (or API error) - reading the public contribution graph instead")
+        days = fetch_calendar_public(login, account_year(login))
+    if days is None:
+        print("!! could not load contributions - stats.svg will show zeros")
         days = {}
     write_svg("stats.svg", stats_svg(compute_stats(days)))
 

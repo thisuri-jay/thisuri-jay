@@ -14,10 +14,10 @@
 
 <g transform="translate(30 52)">
   <rect width="270" height="128" rx="10" fill="#0d1433" stroke="#22e4ff" stroke-opacity=".45"/>
-  <text x="135" y="62" fill="#22e4ff" font-size="38" font-weight="bold" text-anchor="middle" filter="url(#glow)">0
+  <text x="135" y="62" fill="#22e4ff" font-size="38" font-weight="bold" text-anchor="middle" filter="url(#glow)">191
     <animate attributeName="opacity" values="0;1" dur="1.2s" fill="freeze"/></text>
   <text x="135" y="92" fill="#c9d6ff" font-size="13" text-anchor="middle">Total Contributions</text>
-  <text x="135" y="112" fill="#6b7aa8" font-size="11" text-anchor="middle">since -</text>
+  <text x="135" y="112" fill="#6b7aa8" font-size="11" text-anchor="middle">since Jan 2025</text>
 </g>
 
 <g transform="translate(315 52)">
@@ -25,21 +25,21 @@
   <g transform="translate(70 64) rotate(-90)">
     <circle r="40" fill="none" stroke="#6b7aa8" stroke-opacity=".25" stroke-width="8"/>
     <circle r="40" fill="none" stroke="url(#neon)" stroke-width="8" stroke-linecap="round"
-      stroke-dasharray="251.3" stroke-dashoffset="251.3" filter="url(#glow)">
-      <animate attributeName="stroke-dashoffset" values="251.3;251.3" dur="1.6s" fill="freeze"/>
+      stroke-dasharray="251.3" stroke-dashoffset="167.6" filter="url(#glow)">
+      <animate attributeName="stroke-dashoffset" values="251.3;167.6" dur="1.6s" fill="freeze"/>
     </circle>
   </g>
-  <text x="70" y="76" fill="#ff4fd8" font-size="30" font-weight="bold" text-anchor="middle" filter="url(#glow)">0</text>
+  <text x="70" y="76" fill="#ff4fd8" font-size="30" font-weight="bold" text-anchor="middle" filter="url(#glow)">1</text>
   <text x="190" y="58" fill="#c9d6ff" font-size="13" text-anchor="middle">Current Streak</text>
-  <text x="190" y="80" fill="#6b7aa8" font-size="11" text-anchor="middle"></text>
+  <text x="190" y="80" fill="#6b7aa8" font-size="11" text-anchor="middle">Nov 17</text>
   <text x="190" y="100" fill="#6b7aa8" font-size="11" text-anchor="middle">days in a row</text>
 </g>
 
 <g transform="translate(600 52)">
   <rect width="270" height="128" rx="10" fill="#0d1433" stroke="#a855f7" stroke-opacity=".45"/>
-  <text x="135" y="62" fill="#a855f7" font-size="38" font-weight="bold" text-anchor="middle" filter="url(#glow)">0
+  <text x="135" y="62" fill="#a855f7" font-size="38" font-weight="bold" text-anchor="middle" filter="url(#glow)">3
     <animate attributeName="opacity" values="0;1" dur="1.2s" fill="freeze"/></text>
   <text x="135" y="92" fill="#c9d6ff" font-size="13" text-anchor="middle">Longest Streak</text>
-  <text x="135" y="112" fill="#6b7aa8" font-size="11" text-anchor="middle"></text>
+  <text x="135" y="112" fill="#6b7aa8" font-size="11" text-anchor="middle">Oct 02 - Oct 04</text>
 </g>
 </svg>
