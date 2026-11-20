@@ -260,6 +260,10 @@ def info_panel(p):
         ("r", "Grid.Mail", c["email"]), ("r", "Grid.LinkedIn", short(c["linkedin"])),
         ("r", "Grid.GitHub", short(c["github"])),
     ]
+    if c.get("portfolio"):
+        lines.append(("r", "Grid.Portfolio", short(c["portfolio"])))
+    # line height: 17px normally, 16px when the extra portfolio row needs room
+    step = 17 if len(lines) <= 18 else 16
     out, y = [], 72
     for item in lines:
         if item[0] == "h":
@@ -268,7 +272,7 @@ def info_panel(p):
             out.append(header(item[1], y))
         else:
             out.append(row(item[1], item[2], y))
-        y += 17
+        y += step
     # prompt line with a blinking cursor
     y += 4
     # the cursor is a tspan so it always sits right after the text, whatever the font
@@ -326,12 +330,16 @@ ICONS = {
               'stroke-linecap="round" stroke-linejoin="round"/>',
     "email": '<rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke-width="2"/>'
              '<path d="M3 6 L12 13 L21 6" fill="none" stroke-width="2"/>',
+    # globe: circle + meridian + equator
+    "portfolio": '<circle cx="12" cy="12" r="10" fill="none" stroke-width="2"/>'
+                 '<ellipse cx="12" cy="12" rx="4.5" ry="10" fill="none" stroke-width="1.6"/>'
+                 '<path d="M2 12 H22" fill="none" stroke-width="1.6"/>',
 }
 
 
 def build_links():
-    for key, label, color in [("linkedin", "LinkedIn", CYAN), ("github", "GitHub", PURPLE),
-                              ("email", "Email", PINK)]:
+    for key, label, color in [("portfolio", "Portfolio", GREEN), ("linkedin", "LinkedIn", CYAN),
+                              ("github", "GitHub", PURPLE), ("email", "Email", PINK)]:
         svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="170" height="46" viewBox="0 0 170 46" font-family="{FONT}">
 <title>{label}</title>
 {defs_glow()}

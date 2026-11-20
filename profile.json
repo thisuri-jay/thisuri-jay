@@ -18,12 +18,12 @@
   "contact": {
     "email": "thisuridewmini127@gmail.com",
     "linkedin": "https://www.linkedin.com/in/thisuri-jayasinghe-59562b349/",
-    "github": "https://github.com/thisuri-jay"
+    "github": "https://github.com/thisuri-jay",
+    "portfolio": "https://thisuri-jayasinghe.vercel.app/"
   },
 
   "photo": "assets/photo.jpg",
-  "_comment_photo_crop": "Square area of the photo to use: [left, top, right, bottom] in pixels. Delete it to use a centred square.",
-  "photo_crop": [330, 440, 730, 840],
+  "_comment_photo_crop": "Optional: square area of the photo to use, as \"photo_crop\": [left, top, right, bottom] in pixels. Without it a centred square is used.",
   "dot_count": 1500,
 
   "_comment_languages": "Shown (without percentages) only while your public repos have no language data. Once they do, real percentages replace this list.",
